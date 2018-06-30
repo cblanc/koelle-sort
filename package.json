@@ -1,0 +1,59 @@
+{
+  "name": "koelle-sort",
+  "version": "0.1.0",
+  "description": "koelle-sort - also known as alphanum sort",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cblanc/koelle-sort"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "npm run lint && NODE_ENV=test node_modules/.bin/nyc node_modules/.bin/mocha --opts mocha.opts",
+    "lint": "node_modules/.bin/tslint -c tslint.json -p tsconfig.json lib/**/*.ts",
+    "build": "npm run lint && node_modules/.bin/tsc",
+    "coverage": "node_modules/.bin/nyc report --reporter=text-lcov | node_modules/.bin/coveralls || true",
+    "prepare": "npm run build"
+  },
+  "nyc": {
+    "include": [
+      "lib/**/*.ts"
+    ],
+    "exclude": [
+      "dist/*"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "all": true
+  },
+  "engines": {
+    "node": ">=6.9"
+  },
+  "author": "cblanc",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "~4.1.4",
+    "@types/mocha": "~5.2.3",
+    "chai": "~4.1.2",
+    "coveralls": "~3.0.1",
+    "mocha": "~5.2.0",
+    "nyc": "~12.0.2",
+    "source-map-support": "~0.5.6",
+    "ts-node": "~6.2.0",
+    "tslint": "~5.10.0",
+    "typings": "~2.1.1"
+  },
+  "dependencies": {
+    "typescript": "~2.9.2"
+  }
+}
