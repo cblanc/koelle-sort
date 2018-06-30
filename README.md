@@ -11,13 +11,13 @@ npm install @cablanchard/koelle-sort
 ```
 
 ```
-const { sort } = require("@cablanchard/koelle-sort");
+const { alphanum } = require("@cablanchard/koelle-sort");
 
 const sorted = [
 	"file10.txt"
 	"file1.txt",
 	"file2.txt",
-].sort(sort);
+].sort(alphanum);
 ```
 
 ## License
