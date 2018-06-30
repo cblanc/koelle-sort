@@ -17,10 +17,16 @@ const charCodeIsNumeric = (i: number): boolean => {
 	return false;
 };
 
+/**
+ * Returns true if string represents a digit or decimal point
+ */
 const isNumeric = (s: string): boolean => {
 	return charCodeIsNumeric(s.charCodeAt(0));
 };
 
+/**
+ * Returns true if `a` and `b` are same type
+ */
 const isSameType = (a: string, b: string): boolean => {
 	const aIsNumeric = isNumeric(a);
 	const bIsNumeric = isNumeric(b);
@@ -30,15 +36,26 @@ const isSameType = (a: string, b: string): boolean => {
 	return false;
 };
 
+/**
+ * Appends string `s` to last element of `array`
+ */
 const append = (array: string[], s: string): void => {
 	array[array.length - 1] += s;
 };
  
+/**
+ * tokeniser breaks decomposes a string into an array of continuous letters or numbers
+ *
+ * @example
+ * ```
+ * tokeniser("foo12bar13"); // => ["foo", "12", "bar", "13"]
+ * ```
+ */
 export const tokeniser = (input: string): string[] => {
 	if (input.length === 0) return [];
 	const result: string[] = [input[0]];
 	for (let i = 1; i < input.length; i++) {
-		const prev = input[i - 1]
+		const prev = input[i - 1];
 		const current = input[i];
 		if (isSameType(prev, current)) {
 			append(result, current);
