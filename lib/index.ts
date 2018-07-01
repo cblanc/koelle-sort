@@ -2,8 +2,41 @@
  * Alphanum numeric comparator method
  */
 export const alphanum = (a: string, b: string): number => {
-	return 0;
+	const A = tokeniser(a.toLowerCase());
+	const B = tokeniser(b.toLowerCase());
+	for (let i = 0; A[i] && B[i]; i++) {
+		if (A[i] !== B[i]) {
+			// Attempt to compare as numbers first
+			const r = compareNumbers(A[i], B[i]);
+			if (!isNaN(r)) return r;
+			// If number comparison fails, use string comparison
+			return compareTokens(A[i], B[i]);
+		}
+	}
+	return A.length - B.length;
 };
+
+/**
+ * String comparator
+ */
+const compareTokens = (a: string, b: string): number => {
+	return (a > b) ? 1 : -1;
+};
+
+/**
+ * Number comparator 
+ * Compares tokens as numbers. Returns `NaN` if comparison not possible
+ */
+const compareNumbers = (a: string, b: string): number => {
+	const An = Number(a);
+	const Bn = Number(b);
+	if (isNaN(An) || isNaN(Bn)) return NaN;
+	// Handle the case where numbers have 0 padding
+	// e.g. '005' vs '5'
+	if (An === Bn) return b.length - a.length;
+	return An - Bn;
+};
+
 
 // Char codes
 const PERIOD = 46;
@@ -13,7 +46,6 @@ const NINE = 57;
 const charCodeIsNumeric = (i: number): boolean => {
 	if (i === PERIOD) return true;
 	if (i >= ZERO && i <= NINE) return true;
-
 	return false;
 };
 
@@ -25,23 +57,18 @@ const isNumeric = (s: string): boolean => {
 };
 
 /**
- * Returns true if `a` and `b` are same type
+ * Returns true if `a` and `b` are either:
+ * a. Both numeric
+ * b. Both not numeric
  */
 const isSameType = (a: string, b: string): boolean => {
-	const aIsNumeric = isNumeric(a);
-	const bIsNumeric = isNumeric(b);
-	if (aIsNumeric && bIsNumeric) return true;
-	if (!aIsNumeric && !bIsNumeric) return true;
-
-	return false;
+	return isNumeric(a) === isNumeric(b);
 };
 
 /**
  * Appends string `s` to last element of `array`
  */
-const append = (array: string[], s: string): void => {
-	array[array.length - 1] += s;
-};
+const append = (a: string[], s: string): string => a[a.length - 1] += s;
  
 /**
  * tokeniser breaks decomposes a string into an array of continuous letters or numbers
@@ -63,6 +90,5 @@ export const tokeniser = (input: string): string[] => {
 			result.push(current);
 		}
 	}
-
 	return result;
 };
