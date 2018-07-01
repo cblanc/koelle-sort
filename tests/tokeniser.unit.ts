@@ -1,5 +1,5 @@
 import { assert } from "chai";
-import { tokeniser } from "../lib/index";
+import { tokeniser } from "../lib/tokeniser";
 
 interface TestCase {
 	input: string;
