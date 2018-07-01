@@ -34,7 +34,20 @@ alphanum sort is designed to produce more sensible results than ascii sort for c
 
 ## Behaviour
 
+- [Sorts alphanumeric strings](tests/sort.unit.ts#L21)
 - [Sorts numbers](tests/sort.unit.ts#L13)
+- [Sorts letters](tests/sort.unit.ts#L17)
+- [Sorts a number of different date formats](tests/sort.unit.ts#L25)
+- [Sorts decimal numbers](tests/sort.unit.ts#L41)
+- [Sorts zero padded numbers](tests/sort.unit.ts#L45)
+- [Sorts simple and complex filenames](tests/sort.unit.ts#L49)
+- [Sorts empty strings](tests/sort.unit.ts#L57)
+- [Sorts by number first](tests/sort.unit.ts#L61)
+
+### [Notable Unsupported Behaviour](tests/sort.unit.ts#L65)
+
+- Does not skip whitespace
+- Does not support numbers separated by multiple decimal points (e.g. IP Address, Semver formatting)
 
 ## Usage
 
