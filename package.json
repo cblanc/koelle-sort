@@ -1,5 +1,5 @@
 {
-  "name": "koelle-sort",
+  "name": "@cablanchard/koelle-sort",
   "version": "0.1.0",
   "description": "koelle-sort - also known as alphanum sort",
   "repository": {
@@ -12,6 +12,7 @@
     "test": "npm run lint && NODE_ENV=test node_modules/.bin/nyc node_modules/.bin/mocha --opts mocha.opts",
     "lint": "node_modules/.bin/tslint -c tslint.json -p tsconfig.json lib/**/*.ts",
     "build": "npm run lint && node_modules/.bin/tsc",
+    "benchmark": "node_modules/.bin/ts-node benchmark.js",
     "coverage": "node_modules/.bin/nyc report --reporter=text-lcov | node_modules/.bin/coveralls || true",
     "prepare": "npm run build"
   },
@@ -42,12 +43,18 @@
   "author": "cblanc",
   "license": "MIT",
   "devDependencies": {
+    "@types/benchmark": "~1.0.31",
     "@types/chai": "~4.1.4",
     "@types/mocha": "~5.2.3",
-    "@types/node": "^10.5.1",
+    "@types/node": "~10.5.1",
+    "alphanumeric-sort": "0.0.1",
+    "benchmark": "~2.1.4",
     "chai": "~4.1.2",
     "coveralls": "~3.0.1",
+    "javascript-natural-sort": "~0.7.1",
     "mocha": "~5.2.0",
+    "natural-orderby": "~1.0.0",
+    "natural-sort": "~1.0.0",
     "nyc": "~12.0.2",
     "source-map-support": "~0.5.6",
     "ts-node": "~7.0.0",
