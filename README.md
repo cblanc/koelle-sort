@@ -34,7 +34,7 @@ alphanum sort is designed to produce more sensible results than ascii sort for c
 
 ## Behaviour
 
-Todo
+- [Sorts numbers](tests/sort.unit.ts#L13)
 
 ## Usage
 
