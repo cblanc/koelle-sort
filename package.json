@@ -45,12 +45,12 @@
   "devDependencies": {
     "@types/benchmark": "~1.0.31",
     "@types/chai": "~4.1.4",
-    "@types/mocha": "~5.2.3",
-    "@types/node": "~10.5.1",
+    "@types/mocha": "~5.2.4",
+    "@types/node": "~10.5.2",
     "alphanumeric-sort": "0.0.1",
     "benchmark": "~2.1.4",
     "chai": "~4.1.2",
-    "coveralls": "~3.0.1",
+    "coveralls": "~3.0.2",
     "javascript-natural-sort": "~0.7.1",
     "mocha": "~5.2.0",
     "natural-orderby": "~1.0.0",
@@ -62,6 +62,5 @@
     "typescript": "~2.9.2",
     "typings": "~2.1.1"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
