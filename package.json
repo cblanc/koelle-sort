@@ -9,12 +9,21 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "npm run lint && NODE_ENV=test node_modules/.bin/nyc node_modules/.bin/mocha --opts mocha.opts",
+    "test": "npm run lint && NODE_ENV=test node_modules/.bin/nyc node_modules/.bin/mocha",
     "lint": "node_modules/.bin/tslint -c tslint.json -p tsconfig.json lib/**/*.ts",
     "build": "npm run lint && node_modules/.bin/tsc",
     "benchmark": "node_modules/.bin/ts-node benchmark.js",
     "coverage": "node_modules/.bin/nyc report --reporter=text-lcov | node_modules/.bin/coveralls || true",
     "prepare": "npm run build"
+  },
+  "mocha": {
+    "spec": "tests/*.ts",
+    "exit": true,
+    "fullTrace": true,
+    "require": [
+      "ts-node/register",
+      "source-map-support/register"
+    ]
   },
   "nyc": {
     "include": [
@@ -52,7 +61,7 @@
     "chai": "~4.2.0",
     "coveralls": "~3.0.2",
     "javascript-natural-sort": "~0.7.1",
-    "mocha": "~5.2.0",
+    "mocha": "~6.0.0",
     "natural-orderby": "~2.0.0",
     "natural-sort": "~1.0.0",
     "nyc": "~13.3.0",
