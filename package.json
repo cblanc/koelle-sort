@@ -64,7 +64,7 @@
     "mocha": "~6.1.1",
     "natural-orderby": "~2.0.0",
     "natural-sort": "~1.0.0",
-    "nyc": "~14.0.0",
+    "nyc": "~14.1.0",
     "source-map-support": "~0.5.6",
     "ts-node": "~8.1.0",
     "tslint": "~5.16.0",
