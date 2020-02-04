@@ -54,7 +54,7 @@
   "devDependencies": {
     "@types/benchmark": "~1.0.31",
     "@types/chai": "~4.2.0",
-    "@types/mocha": "~5.2.4",
+    "@types/mocha": "~7.0.1",
     "@types/node": "~13.1.0",
     "alphanumeric-sort": "0.0.1",
     "benchmark": "~2.1.4",
