@@ -59,7 +59,7 @@
     "benchmark": "~2.1.4",
     "chai": "~4.2.0",
     "javascript-natural-sort": "~0.7.1",
-    "mocha": "~8.0.1",
+    "mocha": "~8.1.0",
     "natural-orderby": "~2.0.0",
     "natural-sort": "~1.0.0",
     "nyc": "~15.1.0",
