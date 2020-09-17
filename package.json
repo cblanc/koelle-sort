@@ -54,7 +54,7 @@
     "@types/benchmark": "~1.0.31",
     "@types/chai": "~4.2.0",
     "@types/mocha": "~8.0.0",
-    "@types/node": "~14.10.0",
+    "@types/node": "~14.11.1",
     "alphanumeric-sort": "0.0.1",
     "benchmark": "~2.1.4",
     "chai": "~4.2.0",
