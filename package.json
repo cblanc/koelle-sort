@@ -57,7 +57,7 @@
     "@types/node": "~14.14.0",
     "alphanumeric-sort": "0.0.1",
     "benchmark": "~2.1.4",
-    "chai": "~4.2.0",
+    "chai": "~4.3.0",
     "javascript-natural-sort": "~0.7.1",
     "mocha": "~8.2.0",
     "natural-orderby": "~2.0.0",
